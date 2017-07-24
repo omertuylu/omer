@@ -59,19 +59,12 @@
 			   	<ul id="nav" class="nav">
 			      	<li><a href="index.html">Home</a></li>
 			      	<li class="has-children"><a href="#">Dropdown</a>
-	                  <ul>
-	                     <li><a href="#">Submenu 01</a></li>
-	                     <li><a href="#">Submenu 02</a></li>
-	                     <li><a href="#">Submenu 03</a></li>
-	                  </ul>
+	                  
 	               </li>
 	               <li><a href="demo.html">Demo</a></li>	
 	               <li><a href="archives.html">Archives</a></li>
 			      	<li class="has-children current"><a href="blog.html">Blog</a>
-							<ul>
-	                     <li><a href="blog.html">Blog Entries</a></li>
-	                     <li><a href="single.html">Single Blog</a></li>	                     
-	                  </ul>
+							
 			      	</li>		      	
 			      	<li><a href="page.html">Page</a></li>
 			   	</ul> <!-- end #nav -->			   	 

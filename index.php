@@ -4,49 +4,24 @@
 <!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-
    <?php include 'css.php';?>
-
+<meta charset="UTF-8"/>
 </head>
-
-<body>
-<?php
-$dbhost="localhost";
-$dbname="tema_blog";
-$user="user";
-$pass="";
-  try{
-	$db=new PDO("mysql:host=$dbhost;$dbname=$dbname",$user,$pass);
-	echo "veritabanı işlemi başarılı.";
-}catch(PDOException $e){
-	print $e-> getMessage();	
-}
-
-?>
-  
-<?php include 'ust.php';?>
+<body> 
+<?php include 'header.php';?>
    <!-- Content
    ================================================== -->
    <div id="content-wrap">
 
    	<div class="row">
-
    		<div id="main" class="eight columns">
-
 	   		<?php include "icerik.php";?>	
-
    		</div> <!-- end main -->
-
-   		<?php include 'yan.php';?>
-
+   		<?php include 'sidebar.php';?>
    	</div> <!-- end row -->
-
-   </div> <!-- end content-wrap -->
-   
-<?php include 'alt.php';?>
+   </div> <!-- end content-wrap --> 
+<?php include 'footer.php';?>
  
-
-
    <!-- Java Script
    ================================================== -->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -55,5 +30,4 @@ $pass="";
    <script src="js/main.js"></script>
 
 </body>
-
 </html>

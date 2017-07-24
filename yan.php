@@ -11,39 +11,48 @@
                </div>
 
    			<div class="widget widget_categories group">
-   				<h3>Categories.</h3> 
+				<?php 
+				$sorgu = $db -> query("select * from blog_katagori WHERE id=1",PDO::FETCH_ASSOC);
+				if($sorgu -> rowCount())
+					   foreach($sorgu as $row){	 
+		?>
+   				<h3>Categoriler.</h3> 
    				<ul>
-						<li><a href="#" title="">Wordpress</a> (2)</li>
-						<li><a href="#" title="">Ghost</a> (14)</li>
-						<li><a href="#" title="">Joomla</a> (5)</li>
-						<li><a href="#" title="">Drupal</a> (3)</li>
-						<li><a href="#" title="">Magento</a> (2)</li>
-						<li><a href="#" title="">Uncategorized</a> (9)</li>						
+						<li><a href="#" title=""><?php echo $row['php']; ?></a> (2)</li>
+						<li><a href="#" title=""><?php echo $row['html']; ?></a> (14)</li>
+						<li><a href="#" title=""><?php echo $row['css']; ?></a> (5)</li>
+						<li><a href="#" title=""><?php echo $row['kotlin']; ?></a> (3)</li>
+												
 					</ul>
+					
 				</div>
 
 				<div class="widget widget_text group">
-					<h3>Widget Text.</h3>
+					<h3><?php echo $row['w_baslik']; ?></h3>
 
-   				<p>Lorem ipsum Ullamco commodo laboris sit dolore commodo aliquip incididunt fugiat esse dolor aute fugiat minim eiusmod do velit labore fugiat officia ad sit culpa labore in consectetur sint cillum sint consectetur voluptate adipisicing Duis irure magna ut sit amet reprehenderit.</p>
+   				<p><?php echo $row['widget_metın']; ?></p>
 
    			</div>
-
+<?php }?>
    			<div class="widget widget_tags">
-               <h3>Post Tags.</h3>
+				<?php 
+				$sorgu = $db -> query("select * from blog_etiket WHERE id=1",PDO::FETCH_ASSOC);
+				if($sorgu -> rowCount())
+					   foreach($sorgu as $row){	 
+		?>
+               <h3><?php echo $row['etiketadi']; ?></h3>
 
                <div class="tagcloud group">
-                	<a href="#">Corporate</a>
-                  <a href="#">Onepage</a>
-                  <a href="#">Agency</a>
-                  <a href="#">Multipurpose</a>
-                  <a href="#">Blog</a>
-                  <a href="#">Landing Page</a>
-                  <a href="#">Resume</a>
+                	
+                  <a href="#"><?php echo $row['php']; ?></a>
+                  <a href="#"><?php echo $row['html']; ?></a>
+                  <a href="#"><?php echo $row['css']; ?></a>
+                  <a href="#"><?php echo $row['joomla']; ?></a>
+                 
                </div>
-                  
+                 
             </div>
-
+<?php }?> 
             <div class="widget widget_popular">
                <h3>Popular Post.</h3>
 

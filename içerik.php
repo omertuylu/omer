@@ -1,21 +1,30 @@
+<?php
+include 'vt.php';
+?>
 <article class="entry">
 
 					<header class="entry-header">
 
 						<h2 class="entry-title">
-							<a href="single.html" title="">Hey, We Love Open Sans!</a>
+						<?php 
+		$sorgu = $db -> query("select * from blog_icerik",PDO::FETCH_ASSOC);
+		if($sorgu -> rowCount()){
+			   foreach($sorgu as $row){	 
+		?>
+							<a href="single.php" title=""><?php echo $row['baslik'] ?></a>
+						
 						</h2> 				 
-					
+					 
 						<div class="entry-meta">
 							<ul>
-								<li>July 12, 2014</li>
+								<li><?php echo $row['tarih'] ?></li>
 								<span class="meta-sep">&bull;</span>								
 								<li><a href="#" title="" rel="category tag">Ghost</a></li>
 								<span class="meta-sep">&bull;</span>
-								<li>John Doe</li>
+								<li><?php echo $row['kuladi'] ?></li>
 							</ul>
 						</div> 
-					 
+					 <?php} } ?>
 					</header> 
 					
 					<div class="entry-content">
